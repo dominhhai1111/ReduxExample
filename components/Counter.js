@@ -1,13 +1,13 @@
 import React from 'react';
-import Count from './components/Count';
+import Count from './Count';
 import { connect } from 'react-redux';
-import { View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 
 let CountContainer = connect(state => ({ value: state.count }))(Count);
 
-class Counter extends React.Component {
+export default class Counter extends React.Component {
     static navigationOptions = {
-        title: <CountContainer />
+        title: 'Counter!',  
     };
 
     render() {
@@ -32,3 +32,19 @@ class Counter extends React.Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#ecf0f1',
+      padding: 8,
+    },
+    paragraph: {
+      margin: 24,
+      fontSize: 18,
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+});
